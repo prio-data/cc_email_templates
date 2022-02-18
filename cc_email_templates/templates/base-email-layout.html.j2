@@ -33,13 +33,9 @@
                               {% endif %}
 
                               {% if links %}
-                                 <p class="link-group">
-                                    {% for title, url in links.items() %}
-                                       <span class="link">
-                                          <a href="{{ url }}">{{ title }}</a>
-                                       </span>
-                                    {% endfor %}
-                                 </p>
+                                 {% for title, url in links.items() %}
+                                    <a href="{{ url }}">{{ title }}</a><br>
+                                 {% endfor %}
                               {% endif %}
 
                            </td>
