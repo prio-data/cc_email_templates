@@ -32,6 +32,16 @@
                               </p>
                               {% endif %}
 
+                              {% if links %}
+                                 <p class="link-group">
+                                    {% for title, url in links.items() %}
+                                       <span class="link">
+                                          <a href="{{ url }}">{{ title }}</a>
+                                       </span>
+                                    {% endfor %}
+                                 </p>
+                              {% endif %}
+
                            </td>
                         </tr>
                      </table>

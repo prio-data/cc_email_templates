@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cc_email_templates"
-version = "0.1.1"
+version = "0.2.0"
 description = "A set of email templates used by Conflict Cartographer"
 authors = ["peder2911 <pglandsverk@gmail.com>"]
 readme = "README.md"

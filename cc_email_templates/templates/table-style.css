@@ -334,3 +334,15 @@ p.sender-info {
 span.sender-name {
    font-size: 18px;
 }
+
+p.link-group span {
+   color: #aaa;
+}
+
+p.link-group span:after {
+   content: "|"
+}
+
+p.link-group span:last-child:after {
+   content: ""
+}

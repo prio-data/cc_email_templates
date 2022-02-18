@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Dict
 import css_inline
 import jinja2
 from cc_email_templates import txt_processing
@@ -18,7 +18,8 @@ def call_to_action_email(
         content_below:      Optional[str] = None,
         unsub_link:         Optional[str] = None,
         address:            Optional[str] = None,
-        sender:             Optional[str] = None
+        sender:             Optional[str] = None,
+        links: Optional[Dict[str, str]]   = None,
         ) -> str:
     """
     call_to_action_email
@@ -44,7 +45,8 @@ def call_to_action_email(
             action_button_text = action_button_text,
             unsub_link         = unsub_link,
             address            = address,
-            sender             = sender)
+            sender             = sender,
+            links              = links)
 
     txt = env.get_template("simple-call-to-action.txt.j2").render(
             title              = title,
@@ -54,6 +56,7 @@ def call_to_action_email(
             action_button_text = action_button_text,
             unsub_link         = unsub_link,
             address            = address,
-            sender             = sender)
+            sender             = sender,
+            links              = links)
 
     return txt_processing.process(txt), inliner.inline(html)
